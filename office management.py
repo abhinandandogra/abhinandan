@@ -1,35 +1,6 @@
-def add_employee(employees, name, employee_id, department):
-    employees.append({'name': name, 'employee_id': employee_id, 'department': department})
-    print("Employee added successfully.")
-
-def view_all_employees(employees):
-    if employees:
-        idx = 1
-        for employee in employees:
-            print(f"{idx}. Name: {employee['name']}, ID: {employee['employee_id']}, Department: {employee['department']}")
-            idx += 1
-    else:
-        print("No employees available.")
-
-def search_employee(employees, name):
-    found_employees = [employee for employee in employees if employee['name'].lower() == name.lower()]
-    if found_employees:
-        for employee in found_employees:
-            print(f"Name: {employee['name']}, ID: {employee['employee_id']}, Department: {employee['department']}")
-    else:
-        print("Employee not found.")
-
-def remove_employee(employees, employee_id):
-    for employee in employees:
-        if employee['employee_id'] == employee_id:
-            employees.remove(employee)
-            print("Employee removed successfully.")
-            return
-    print("Employee not found.")
-
 def main():
     employees = []
-    while True:
+    for _ in range(100):  # Choose a suitable upper limit for the number of iterations
         print("\n======= Office Management System =======")
         print("1. Add Employee")
         print("2. View All Employees")
@@ -65,4 +36,3 @@ def main():
 
 # Start the program by calling the main function
 main()
-
